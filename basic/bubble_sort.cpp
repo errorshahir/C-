@@ -3,26 +3,30 @@ using namespace std;
 
 int main ()
 {
-    int n;
-    int a[5] = {17, 3, 7, 14, 5};
-    int i, j, temp;
+   int n, i, j, temp;
+   cin >> n;
+   int a[n];
 
-    for (i=0; i<5; i++)
-    {
-        for (j=0; j<5-i-1; j++)
-        {
-            if (a[j] > a[j+1])
-            {
-                temp = a[j];
-                a[j] = a[j+1];
-                a[j+1] = temp;
-            }
-        }
-    }
+   for (i=0; i<n; i++)
+   {
+      cin >> a[i];
+   }
 
-    for (i=0; i<5; i++)
-    {
-        cout << a[i] << " ";
-    }
+   for (i=0; i<n; i++)
+   {
+      for (j=0; j<n-i-1; j++)
+      {
+         if (a[j] > a[j+1])
+         {
+            temp = a[j];
+            a[j] = a[j+1];
+            a[j+1] = temp;
+         }
+      }
+   }
 
+   for (i=0; i<n; i++)
+   {
+      cout << a[i] << " ";
+   }
 }
